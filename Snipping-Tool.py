@@ -34,7 +34,6 @@ class MyWidget(QtWidgets.QWidget):
             QtGui.QCursor(QtCore.Qt.CrossCursor)
         )
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-        print('Capture the screen...')
         self.show()
 
     def paintEvent(self, event):
