@@ -12,8 +12,9 @@ import keyboard
 abspath = os.path.abspath(sys.argv[0])
 dname = os.path.dirname(abspath)
 if path.isfile('Images') == False:
-    os.mkdir(dname + '\\Images')
+    os.makedirs(dname + '\\Images', exist_ok=True)
 os.chdir(dname + "\\Images")
+
 
 list = os.listdir(dname + '\\Images')
 number_files = len(list)
@@ -34,6 +35,7 @@ class MyWidget(QtWidgets.QWidget):
             QtGui.QCursor(QtCore.Qt.CrossCursor)
         )
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        print('Capture the screen...')
         self.show()
 
     def paintEvent(self, event):
@@ -62,6 +64,7 @@ class MyWidget(QtWidgets.QWidget):
         img = ImageGrab.grab(bbox=(x1, y1, x2, y2))
         img.save('capture ' + str(captureNum) + '.png')
         img = cv2.cvtColor(np.array(img), cv2.COLOR_BGR2RGB)
+        exit()
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
