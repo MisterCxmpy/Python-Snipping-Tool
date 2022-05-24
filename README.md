@@ -9,9 +9,11 @@ in the folder is where you will find all the images that you have taken.
 Modules required:
   
   * PyQT5
+  * Tkinter
+  * Pillow
+  * Numpy
+  * Keyboard
 
 How to use:
 
-
-
-Simply run snip.py
+Simply run snip.py and select the area which you would like to take a snip of.
